@@ -50,6 +50,7 @@ be aware that the API isn't in stone yet. See TODO
 COPYRIGHT AND LICENCE
 
 Copyright (C) 2013 by Salvador Ortiz Garcia
+Copyright (C) 2014 by Henri Asseily
 
 This module is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.10.1 or,

@@ -29,7 +29,7 @@ populateStat(pTHX_ HV** hashptr, int res, MDB_stat *stat)
 {
     HV* RETVAL;
     if(res) 
-	croak(mdb_strerror(res));
+	croak(mdb_strerror(res), NULL);
     RETVAL = newHV();
     StoreUV("psize", stat->ms_psize);
     StoreUV("depth", stat->ms_depth);
@@ -204,7 +204,7 @@ LMDB_dcmp(const MDB_val *a, const MDB_val *b) {
 #define ProcError(res)   \
     if(res) {					\
 	sv_setiv(GvSV(my_lasterr), res);	\
-	SV *sv = newSVpvf(mdb_strerror(res));	\
+	SV *sv = newSVpv(mdb_strerror(res),0);	\
 	SvSetSV(ERRSV, sv);			\
 	if(DieOnErr) croak(NULL);		\
 	XSRETURN_IV(res);			\
